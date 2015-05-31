@@ -247,6 +247,15 @@ class StrokeLabeler:
             # above in the contructor: self.featureNames, self.contOrDisc,
             #    self.numFVals (for discrete features only)
 
+            # feature 2: sum of curvature
+            # the idea is that the more curvature a stroke has, the more likely it is a drawing
+            # parameters need to be tuned
+            curv = s.sumOfCurvature(lambda x: math.fabs(x), 2)
+            if curv < 0.5:
+                d['curvature'] = 0
+            else:
+                d['curvature'] = 1
+
 
             ret.append(d)  # append the feature dictionary to the list
             
@@ -505,10 +514,10 @@ class StrokeLabeler:
         #{'drawing': {'drawing': 30, 'text': 10}, 'text': {'drawing': 5, 'text': 20}}
 
         # Let the text be positive, drawing be negative
-        falsePos=0.0; falseNeg=0.0; truePos=0.0; trueNeg=0.0
+        falsePos=0; falseNeg=0; truePos=0; trueNeg=0
         assert len(trueLabels)==len(classifications)
 
-        counter=0.0
+        counter=0
         for label in range(len(trueLabels)):
             # If label is drawing
             if trueLabels[label]=='drawing':
@@ -646,3 +655,4 @@ print x.confusion(trueLabels[1],labels)
 
 # Changelog: 2015/05/29 Jerry
 # Functions I've written: HMM.label( self, data ), StrokeLabeler.confusion(self,trueLabels, classifications)
+# 2015-05-31 Alan: Add sumOfCurvature feature in StrokeLabeler.featurefy( self, strokes )
