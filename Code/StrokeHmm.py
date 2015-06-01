@@ -136,7 +136,7 @@ class HMM:
                         self.emissions[s][f][i] /= float(len(featureVals[s][f])+self.numVals[f])
 
               
-    def label( self, data ):
+    def label( self, data,feature='length' ):
 
         ''' Find the most likely labels for the sequence of data
             This is an implementation of the Viterbi algorithm  '''
@@ -145,14 +145,17 @@ class HMM:
         path={}
         # Initialize the t=0 case
         for state in self.states:
-            V[0][state]=self.priors[state]*self.emissions[state]['length'][data[0]['length']]
+            # Calculate only using priors and emissions for t=0
+            V[0][state]=self.priors[state]*self.emissions[state][feature][data[0][feature]]
             path[state]=[state]
         for t in range(1,len(data)):
             V.append({})
             newPath={}
             for state in self.states:
+                # for s in self.states:
+                #     print str((V[t-1][s]*self.transitions[s][state]*self.emissions[state][feature][data[t][feature]],s))
                 # Argmax(Pr (most probable path to A) . Pr (X | A) . Pr (observation | X))
-                probability,mostLikelyState=max((V[t-1][s]*self.transitions[s][state]*self.emissions[s]['length'][data[t]['length']],s) for s in self.states)
+                probability,mostLikelyState=max((V[t-1][s]*self.transitions[s][state]*self.emissions[state][feature][data[t][feature]],s) for s in self.states)
                 V[t][state]=probability
                 # Stores the new
                 newPath[state]=path[mostLikelyState]+[state]
@@ -656,3 +659,18 @@ print x.confusion(trueLabels[1],labels)
 # Changelog: 2015/05/29 Jerry
 # Functions I've written: HMM.label( self, data ), StrokeLabeler.confusion(self,trueLabels, classifications)
 # 2015-05-31 Alan: Add sumOfCurvature feature in StrokeLabeler.featurefy( self, strokes )
+
+# Part 1 Viterbi Testing Example
+# Same as viterbi_calc_in_class on piazza
+# hmm=HMM(['sunny','cloudy','rainy'],['weather'],{'weather':1},{'weather':3})
+# hmm.priors = {'sunny':0.63,'cloudy':0.17,'rainy':0.20}
+# # Weather: dry, dryish, damp, soggy
+# hmm.emissions = {'sunny':{'weather':[0.6,0.20,0.15,0.05]},
+#                  'cloudy':{'weather':[0.25,0.25,0.25,0.25]},
+#                  'rainy':{'weather':[0.05,0.10,0.35,0.50]}}   #evidence model
+# hmm.transitions = {'sunny':{'sunny':0.5,'cloudy':0.375,'rainy':0.125},
+#                    'cloudy':{'sunny':0.25,'cloudy':0.125,'rainy':0.675},
+#                    'rainy':{'sunny':0.25,'cloudy':0.375,'rainy':0.375}} #transition model
+# data=[{'weather':0},{'weather':2},{'weather':3}]
+# print hmm.label(data,'weather' )
+
