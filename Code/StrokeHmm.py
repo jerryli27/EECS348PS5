@@ -5,6 +5,7 @@ import guid
 import math
 import os
 import pickle
+import operator
 
 # A couple contants
 CONTINUOUS = 0
@@ -142,7 +143,7 @@ class HMM:
                         self.emissions[s][f][i] /= float(len(featureVals[s][f])+self.numVals[f])
 
               
-    def label( self, data,feature='length' ):
+    def label( self, data):
 
         ''' Find the most likely labels for the sequence of data
             This is an implementation of the Viterbi algorithm  '''
@@ -152,7 +153,7 @@ class HMM:
         # Initialize the t=0 case
         for state in self.states:
             # Calculate only using priors and emissions for t=0
-            V[0][state]=self.priors[state]*self.emissions[state][feature][data[0][feature]]
+            V[0][state]=self.priors[state]*prod(self.emissions[state][feature][data[0][feature]] for feature in self.featureNames)
             path[state]=[state]
         for t in range(1,len(data)):
             V.append({})
@@ -161,7 +162,7 @@ class HMM:
                 # for s in self.states:
                 #     print str((V[t-1][s]*self.transitions[s][state]*self.emissions[state][feature][data[t][feature]],s))
                 # Argmax(Pr (most probable path to A) . Pr (X | A) . Pr (observation | X))
-                probability,mostLikelyState=max((V[t-1][s]*self.transitions[s][state]*self.emissions[state][feature][data[t][feature]],s) for s in self.states)
+                probability,mostLikelyState=max((V[t-1][s]*self.transitions[s][state]*prod(self.emissions[state][feature][data[t][feature]] for feature in self.featureNames),s) for s in self.states)
                 V[t][state]=probability
                 # Stores the new
                 newPath[state]=path[mostLikelyState]+[state]
@@ -634,6 +635,10 @@ class Stroke:
 
     # You can (and should) define more features here
 
+# Products of a list
+def prod(iterable):
+    return reduce(operator.mul, iterable, 1)
+
 class Picklefy:
     def save(self, dObj, sFilename):
         """Given an object and a file name, write the object to the file using pickle."""
@@ -657,9 +662,9 @@ class Picklefy:
 # x.trainHMMDir("../trainingFiles/") #../ means go back a directory
 # pkl=Picklefy()
 # pkl.save(x.hmm,'hmm.pickle')
-
-#x.labelFile("../trainingFiles/0128_1.6.1.labeled.xml", "results.txt")
-
+#
+# #x.labelFile("../trainingFiles/0128_1.6.1.labeled.xml", "results.txt")
+#
 # strokes,trueLabels=x.loadLabeledFile("../trainingFiles/0128_1.6.1.labeled.xml")
 # labels =x.labelStrokes(strokes)
 # print x.confusion(trueLabels,labels)
@@ -667,6 +672,7 @@ class Picklefy:
 # Changelog: 2015/05/29 Jerry
 # Functions I've written: HMM.label( self, data ), StrokeLabeler.confusion(self,trueLabels, classifications)
 # 2015-05-31 Alan: Add sumOfCurvature feature in StrokeLabeler.featurefy( self, strokes )
+# 2015-06-02 Jerry: added support for multiple observed feature in label function.
 
 # Part 1 Viterbi Testing Example
 # Same as viterbi_calc_in_class on piazza
