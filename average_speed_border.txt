@@ -1,0 +1,89 @@
+average speed border = 0:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'average speed': [0.0013458950201884253, 0.9986541049798116], 'curvature': [0.5383580080753702, 0.4616419919246299]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'average speed': [0.0007836990595611285, 0.9992163009404389], 'curvature': [0.2170846394984326, 0.7829153605015674]}}
+{'text': {'text': 501, 'drawing': 240}, 'drawing': {'text': 304, 'drawing': 970}}
+text precision: 67.6113360324%
+drawing precision: 76.1381475667%
+
+average speed border = 1:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'average speed': [0.414535666218035, 0.585464333781965], 'curvature': [0.5383580080753702, 0.4616419919246299]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'average speed': [0.4106583072100313, 0.5893416927899686], 'curvature': [0.2170846394984326, 0.7829153605015674]}}
+{'text': {'text': 499, 'drawing': 242}, 'drawing': {'text': 316, 'drawing': 958}}
+text precision: 67.3414304993%
+drawing precision: 75.1962323391%
+
+average speed border = 2:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'average speed': [0.8950201884253028, 0.10497981157469717], 'curvature': [0.5383580080753702, 0.4616419919246299]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'average speed': [0.7884012539184952, 0.2115987460815047], 'curvature': [0.2170846394984326, 0.7829153605015674]}}
+{'text': {'text': 529, 'drawing': 212}, 'drawing': {'text': 344, 'drawing': 930}}
+text precision: 71.3900134953%
+drawing precision: 72.9984301413%
+
+average speed border = 3.0:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'average speed': [0.9878869448183042, 0.012113055181695828], 'curvature': [0.5383580080753702, 0.4616419919246299]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'average speed': [0.9373040752351097, 0.06269592476489028], 'curvature': [0.2170846394984326, 0.7829153605015674]}}
+{'text': {'text': 532, 'drawing': 209}, 'drawing': {'text': 339, 'drawing': 935}}
+text precision: 71.7948717949%
+drawing precision: 73.3908948195%
+
+average speed border = 3.1:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'average speed': [0.9946164199192463, 0.005383580080753701], 'curvature': [0.5383580080753702, 0.4616419919246299]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'average speed': [0.9459247648902821, 0.054075235109717866], 'curvature': [0.2170846394984326, 0.7829153605015674]}}
+{'text': {'text': 533, 'drawing': 208}, 'drawing': {'text': 336, 'drawing': 938}}
+text precision: 71.9298245614%
+drawing precision: 73.6263736264%
+
+average speed border = 3.2:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'average speed': [0.9946164199192463, 0.005383580080753701], 'curvature': [0.5383580080753702, 0.4616419919246299]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'average speed': [0.9521943573667712, 0.04780564263322884], 'curvature': [0.2170846394984326, 0.7829153605015674]}}
+{'text': {'text': 533, 'drawing': 208}, 'drawing': {'text': 342, 'drawing': 932}}
+text precision: 71.9298245614%
+drawing precision: 73.1554160126%
+
+average speed border = 3.3:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'average speed': [0.9959623149394348, 0.004037685060565276], 'curvature': [0.5383580080753702, 0.4616419919246299]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'average speed': [0.9568965517241379, 0.04310344827586207], 'curvature': [0.2170846394984326, 0.7829153605015674]}}
+{'text': {'text': 533, 'drawing': 208}, 'drawing': {'text': 338, 'drawing': 936}}
+text precision: 71.9298245614%
+drawing precision: 73.4693877551%
+
+average speed border = 3.4:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'average speed': [0.9959623149394348, 0.004037685060565276], 'curvature': [0.5383580080753702, 0.4616419919246299]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'average speed': [0.9623824451410659, 0.03761755485893417], 'curvature': [0.2170846394984326, 0.7829153605015674]}}
+{'text': {'text': 533, 'drawing': 208}, 'drawing': {'text': 338, 'drawing': 936}}
+text precision: 71.9298245614%
+drawing precision: 73.4693877551%
+
+average speed border = 3.5:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'average speed': [0.9959623149394348, 0.004037685060565276], 'curvature': [0.5383580080753702, 0.4616419919246299]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'average speed': [0.9647335423197492, 0.03526645768025078], 'curvature': [0.2170846394984326, 0.7829153605015674]}}
+{'text': {'text': 530, 'drawing': 211}, 'drawing': {'text': 338, 'drawing': 936}}
+text precision: 71.5249662618%
+drawing precision: 73.4693877551%
+
+average speed border = 3.6:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'average speed': [0.9959623149394348, 0.004037685060565276], 'curvature': [0.5383580080753702, 0.4616419919246299]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'average speed': [0.9670846394984326, 0.032915360501567396], 'curvature': [0.2170846394984326, 0.7829153605015674]}}
+{'text': {'text': 530, 'drawing': 211}, 'drawing': {'text': 338, 'drawing': 936}}
+text precision: 71.5249662618%
+drawing precision: 73.4693877551%
+
+average speed border = 3.7:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'average speed': [0.9959623149394348, 0.004037685060565276], 'curvature': [0.5383580080753702, 0.4616419919246299]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'average speed': [0.9717868338557993, 0.02821316614420063], 'curvature': [0.2170846394984326, 0.7829153605015674]}}
+{'text': {'text': 530, 'drawing': 211}, 'drawing': {'text': 342, 'drawing': 932}}
+text precision: 71.5249662618%
+drawing precision: 73.1554160126%
+
+average speed border = 3.8:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'average speed': [0.9959623149394348, 0.004037685060565276], 'curvature': [0.5383580080753702, 0.4616419919246299]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'average speed': [0.975705329153605, 0.024294670846394983], 'curvature': [0.2170846394984326, 0.7829153605015674]}}
+{'text': {'text': 530, 'drawing': 211}, 'drawing': {'text': 342, 'drawing': 932}}
+text precision: 71.5249662618%
+drawing precision: 73.1554160126%
+
+average speed border = 3.9:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'average speed': [0.9959623149394348, 0.004037685060565276], 'curvature': [0.5383580080753702, 0.4616419919246299]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'average speed': [0.9780564263322884, 0.0219435736677116], 'curvature': [0.2170846394984326, 0.7829153605015674]}}
+{'text': {'text': 530, 'drawing': 211}, 'drawing': {'text': 339, 'drawing': 935}}
+text precision: 71.5249662618%
+drawing precision: 73.3908948195%
+
+average speed border = 4.0:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'average speed': [0.9959623149394348, 0.004037685060565276], 'curvature': [0.5383580080753702, 0.4616419919246299]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'average speed': [0.9811912225705329, 0.018808777429467086], 'curvature': [0.2170846394984326, 0.7829153605015674]}}
+{'text': {'text': 530, 'drawing': 211}, 'drawing': {'text': 339, 'drawing': 935}}
+text precision: 71.5249662618%
+drawing precision: 73.3908948195%
+
+average speed border = 5:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'average speed': [0.9973082099596231, 0.0026917900403768506], 'curvature': [0.5383580080753702, 0.4616419919246299]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'average speed': [0.9921630094043887, 0.007836990595611285], 'curvature': [0.2170846394984326, 0.7829153605015674]}}
+{'text': {'text': 504, 'drawing': 237}, 'drawing': {'text': 310, 'drawing': 964}}
+text precision: 68.016194332%
+drawing precision: 75.6671899529%

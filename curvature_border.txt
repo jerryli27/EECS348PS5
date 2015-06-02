@@ -1,0 +1,197 @@
+curvature border = 0.0:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'curvature': [0.0013458950201884253, 0.9986541049798116]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'curvature': [0.0007836990595611285, 0.9992163009404389]}}
+{'text': {'text': 470, 'drawing': 271}, 'drawing': {'text': 390, 'drawing': 884}}
+text precision: 63.4278002699%
+drawing precision: 69.387755102%
+
+curvature border = 2e-05:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'curvature': [0.5383580080753702, 0.4616419919246299]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'curvature': [0.2170846394984326, 0.7829153605015674]}}
+{'text': {'text': 501, 'drawing': 240}, 'drawing': {'text': 304, 'drawing': 970}}
+text precision: 67.6113360324%
+drawing precision: 76.1381475667%
+
+curvature border = 4e-05:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'curvature': [0.5383580080753702, 0.4616419919246299]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'curvature': [0.21786833855799373, 0.7821316614420063]}}
+{'text': {'text': 501, 'drawing': 240}, 'drawing': {'text': 304, 'drawing': 970}}
+text precision: 67.6113360324%
+drawing precision: 76.1381475667%
+
+curvature border = 6e-05:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'curvature': [0.5383580080753702, 0.4616419919246299]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'curvature': [0.219435736677116, 0.780564263322884]}}
+{'text': {'text': 501, 'drawing': 240}, 'drawing': {'text': 304, 'drawing': 970}}
+text precision: 67.6113360324%
+drawing precision: 76.1381475667%
+
+curvature border = 8e-05:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'curvature': [0.5383580080753702, 0.4616419919246299]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'curvature': [0.22100313479623823, 0.7789968652037618]}}
+{'text': {'text': 501, 'drawing': 240}, 'drawing': {'text': 304, 'drawing': 970}}
+text precision: 67.6113360324%
+drawing precision: 76.1381475667%
+
+curvature border = 0.0001:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'curvature': [0.5383580080753702, 0.4616419919246299]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'curvature': [0.22178683385579936, 0.7782131661442007]}}
+{'text': {'text': 500, 'drawing': 241}, 'drawing': {'text': 304, 'drawing': 970}}
+text precision: 67.4763832659%
+drawing precision: 76.1381475667%
+
+curvature border = 0.00012:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'curvature': [0.5383580080753702, 0.4616419919246299]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'curvature': [0.22178683385579936, 0.7782131661442007]}}
+{'text': {'text': 500, 'drawing': 241}, 'drawing': {'text': 304, 'drawing': 970}}
+text precision: 67.4763832659%
+drawing precision: 76.1381475667%
+
+curvature border = 0.00014:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'curvature': [0.5383580080753702, 0.4616419919246299]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'curvature': [0.2225705329153605, 0.7774294670846394]}}
+{'text': {'text': 500, 'drawing': 241}, 'drawing': {'text': 304, 'drawing': 970}}
+text precision: 67.4763832659%
+drawing precision: 76.1381475667%
+
+curvature border = 0.00016:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'curvature': [0.5383580080753702, 0.4616419919246299]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'curvature': [0.22335423197492163, 0.7766457680250783]}}
+{'text': {'text': 500, 'drawing': 241}, 'drawing': {'text': 304, 'drawing': 970}}
+text precision: 67.4763832659%
+drawing precision: 76.1381475667%
+
+curvature border = 0.00018:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'curvature': [0.5383580080753702, 0.4616419919246299]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'curvature': [0.22335423197492163, 0.7766457680250783]}}
+{'text': {'text': 500, 'drawing': 241}, 'drawing': {'text': 304, 'drawing': 970}}
+text precision: 67.4763832659%
+drawing precision: 76.1381475667%
+
+curvature border = 0.0002:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'curvature': [0.5383580080753702, 0.4616419919246299]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'curvature': [0.22335423197492163, 0.7766457680250783]}}
+{'text': {'text': 500, 'drawing': 241}, 'drawing': {'text': 304, 'drawing': 970}}
+text precision: 67.4763832659%
+drawing precision: 76.1381475667%
+
+curvature border = 0.0004:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'curvature': [0.5383580080753702, 0.4616419919246299]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'curvature': [0.2249216300940439, 0.7750783699059561]}}
+{'text': {'text': 500, 'drawing': 241}, 'drawing': {'text': 310, 'drawing': 964}}
+text precision: 67.4763832659%
+drawing precision: 75.6671899529%
+
+curvature border = 0.0006:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'curvature': [0.5383580080753702, 0.4616419919246299]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'curvature': [0.23432601880877743, 0.7656739811912225]}}
+{'text': {'text': 506, 'drawing': 235}, 'drawing': {'text': 320, 'drawing': 954}}
+text precision: 68.286099865%
+drawing precision: 74.8822605965%
+
+curvature border = 0.0008:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'curvature': [0.5383580080753702, 0.4616419919246299]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'curvature': [0.23824451410658307, 0.7617554858934169]}}
+{'text': {'text': 506, 'drawing': 235}, 'drawing': {'text': 325, 'drawing': 949}}
+text precision: 68.286099865%
+drawing precision: 74.4897959184%
+
+curvature border = 0.001:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'curvature': [0.5383580080753702, 0.4616419919246299]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'curvature': [0.2445141065830721, 0.7554858934169278]}}
+{'text': {'text': 506, 'drawing': 235}, 'drawing': {'text': 325, 'drawing': 949}}
+text precision: 68.286099865%
+drawing precision: 74.4897959184%
+
+curvature border = 0.0012:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'curvature': [0.5383580080753702, 0.4616419919246299]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'curvature': [0.25235109717868337, 0.7476489028213166]}}
+{'text': {'text': 506, 'drawing': 235}, 'drawing': {'text': 328, 'drawing': 946}}
+text precision: 68.286099865%
+drawing precision: 74.2543171115%
+
+curvature border = 0.0014:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'curvature': [0.5383580080753702, 0.4616419919246299]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'curvature': [0.2601880877742947, 0.7398119122257053]}}
+{'text': {'text': 504, 'drawing': 237}, 'drawing': {'text': 338, 'drawing': 936}}
+text precision: 68.016194332%
+drawing precision: 73.4693877551%
+
+curvature border = 0.0016:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'curvature': [0.5383580080753702, 0.4616419919246299]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'curvature': [0.26802507836990597, 0.731974921630094]}}
+{'text': {'text': 504, 'drawing': 237}, 'drawing': {'text': 338, 'drawing': 936}}
+text precision: 68.016194332%
+drawing precision: 73.4693877551%
+
+curvature border = 0.0018:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'curvature': [0.5383580080753702, 0.4616419919246299]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'curvature': [0.2719435736677116, 0.7280564263322884]}}
+{'text': {'text': 495, 'drawing': 246}, 'drawing': {'text': 345, 'drawing': 929}}
+text precision: 66.8016194332%
+drawing precision: 72.9199372057%
+
+curvature border = 0.002:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'curvature': [0.5383580080753702, 0.4616419919246299]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'curvature': [0.28056426332288403, 0.719435736677116]}}
+{'text': {'text': 493, 'drawing': 248}, 'drawing': {'text': 339, 'drawing': 935}}
+text precision: 66.5317139001%
+drawing precision: 73.3908948195%
+
+curvature border = 0.0022:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'curvature': [0.5383580080753702, 0.4616419919246299]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'curvature': [0.2907523510971787, 0.7092476489028213]}}
+{'text': {'text': 500, 'drawing': 241}, 'drawing': {'text': 341, 'drawing': 933}}
+text precision: 67.4763832659%
+drawing precision: 73.2339089482%
+
+curvature border = 0.0024:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'curvature': [0.5383580080753702, 0.4616419919246299]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'curvature': [0.2938871473354232, 0.7061128526645768]}}
+{'text': {'text': 500, 'drawing': 241}, 'drawing': {'text': 341, 'drawing': 933}}
+text precision: 67.4763832659%
+drawing precision: 73.2339089482%
+
+curvature border = 0.0026:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'curvature': [0.5383580080753702, 0.4616419919246299]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'curvature': [0.3017241379310345, 0.6982758620689655]}}
+{'text': {'text': 500, 'drawing': 241}, 'drawing': {'text': 341, 'drawing': 933}}
+text precision: 67.4763832659%
+drawing precision: 73.2339089482%
+
+curvature border = 0.0028:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'curvature': [0.5383580080753702, 0.4616419919246299]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'curvature': [0.31739811912225707, 0.682601880877743]}}
+{'text': {'text': 512, 'drawing': 229}, 'drawing': {'text': 354, 'drawing': 920}}
+text precision: 69.0958164642%
+drawing precision: 72.2135007849%
+
+curvature border = 0.003:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'curvature': [0.5383580080753702, 0.4616419919246299]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'curvature': [0.3283699059561129, 0.6716300940438872]}}
+{'text': {'text': 511, 'drawing': 230}, 'drawing': {'text': 371, 'drawing': 903}}
+text precision: 68.9608636977%
+drawing precision: 70.8791208791%
+
+curvature border = 0.0032:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'curvature': [0.5383580080753702, 0.4616419919246299]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'curvature': [0.3346394984326019, 0.6653605015673981]}}
+{'text': {'text': 511, 'drawing': 230}, 'drawing': {'text': 371, 'drawing': 903}}
+text precision: 68.9608636977%
+drawing precision: 70.8791208791%
+
+curvature border = 0.0034:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'curvature': [0.5383580080753702, 0.4616419919246299]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'curvature': [0.3495297805642633, 0.6504702194357367]}}
+{'text': {'text': 511, 'drawing': 230}, 'drawing': {'text': 378, 'drawing': 896}}
+text precision: 68.9608636977%
+drawing precision: 70.3296703297%
+
+curvature border = 0.0036:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'curvature': [0.5383580080753702, 0.4616419919246299]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'curvature': [0.3565830721003135, 0.6434169278996865]}}
+{'text': {'text': 513, 'drawing': 228}, 'drawing': {'text': 391, 'drawing': 883}}
+text precision: 69.2307692308%
+drawing precision: 69.3092621664%
+
+curvature border = 0.0038:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'curvature': [0.5383580080753702, 0.4616419919246299]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'curvature': [0.3628526645768025, 0.6371473354231975]}}
+{'text': {'text': 504, 'drawing': 237}, 'drawing': {'text': 389, 'drawing': 885}}
+text precision: 68.016194332%
+drawing precision: 69.4662480377%
+
+curvature border = 0.004:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'curvature': [0.5397039030955586, 0.46029609690444145]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'curvature': [0.3722570532915361, 0.627742946708464]}}
+{'text': {'text': 498, 'drawing': 243}, 'drawing': {'text': 391, 'drawing': 883}}
+text precision: 67.2064777328%
+drawing precision: 69.3092621664%
+
+curvature border = 0.0042:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'curvature': [0.5397039030955586, 0.46029609690444145]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'curvature': [0.3761755485893417, 0.6238244514106583]}}
+{'text': {'text': 498, 'drawing': 243}, 'drawing': {'text': 391, 'drawing': 883}}
+text precision: 67.2064777328%
+drawing precision: 69.3092621664%
+
+curvature border = 0.0044:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'curvature': [0.5410497981157469, 0.458950201884253]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'curvature': [0.3832288401253918, 0.6167711598746082]}}
+{'text': {'text': 498, 'drawing': 243}, 'drawing': {'text': 391, 'drawing': 883}}
+text precision: 67.2064777328%
+drawing precision: 69.3092621664%
+
+curvature border = 0.0046:
+Evidence model is: {'text': {'length': [0.7456258411843876, 0.2543741588156124], 'curvature': [0.5423956931359354, 0.4576043068640646]}, 'drawing': {'length': [0.40203761755485895, 0.5979623824451411], 'curvature': [0.3926332288401254, 0.6073667711598746]}}
+{'text': {'text': 492, 'drawing': 249}, 'drawing': {'text': 384, 'drawing': 890}}
+text precision: 66.3967611336%
+drawing precision: 69.8587127159%

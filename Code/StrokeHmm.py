@@ -10,11 +10,16 @@ import operator
 # A couple contants
 CONTINUOUS = 0
 DISCRETE = 1
+INFINITY = float('inf')
 
 # global variables for featurefy
-global lengthBorder;
-lengthBorder = 368  #368 is the optimum here
-global curvBorder
+global lengthBorder; lengthBorder = 368  #368 is the optimum here
+global curvBorder; curvBorder = 0.000006  # optimum border
+global avgSpeedBorder; avgSpeedBorder = 3.4  # optimum border
+global maxSpeedBorder; maxSpeedBorder = 5.2  # optimum border
+global minSpeedBorder; minSpeedBorder = 0.3  # optimum border
+global boxAreaBorder; boxAreaBorder = 93000  # optimum border
+global boxRatioBorder; boxRatioBorder = 0.2  # optimum border
 
 
 class HMM:
@@ -216,9 +221,9 @@ class StrokeLabeler:
         #    name to whether it is continuous or discrete
         # numFVals is a dictionary specifying the number of legal values for
         #    each discrete feature
-        self.featureNames = ['length', 'curvature']
-        self.contOrDisc = {'length': DISCRETE, 'curvature': DISCRETE}
-        self.numFVals = {'length': 2, 'curvature': 2}
+        self.featureNames = ['length', 'curvature', 'average speed', 'max speed', 'min speed', 'box area', 'box ratio']
+        self.contOrDisc = {'length': DISCRETE, 'curvature': DISCRETE, 'average speed': DISCRETE, 'max speed': DISCRETE, 'min speed': DISCRETE, 'box area': DISCRETE, 'box ratio': DISCRETE}
+        self.numFVals = {'length': 2, 'curvature': 2, 'average speed': 2, 'max speed': 2, 'min speed': 2, 'box area': 2, 'box ratio': 2}
 
     def featurefy( self, strokes ):
         ''' Converts the list of strokes into a list of feature dictionaries
@@ -260,7 +265,6 @@ class StrokeLabeler:
 
             # feature 2: sum of curvature
             # the idea is that the more curvature a stroke has, the more likely it is a drawing
-            # parameters need to be tuned
             curv = s.sumOfCurvature(lambda x: math.fabs(x), 11)
             global curvBorder
             if curv < curvBorder:
@@ -268,6 +272,42 @@ class StrokeLabeler:
             else:
                 d['curvature'] = 1
 
+            # feature 3: average speed
+            speed = s.avgSpeed(l)
+            global avgSpeedBorder
+            if speed < avgSpeedBorder:
+                d['average speed'] = 0
+            else:
+                d['average speed'] = 1
+
+            # feature 4: max speed
+            speed = s.maxSpeed()
+            global maxSpeedBorder
+            if speed < maxSpeedBorder:
+                d['max speed'] = 0
+            else:
+                d['max speed'] = 1
+
+            # feature 5: min speed
+            speed = s.minSpeed()
+            global minSpeedBorder
+            if speed < minSpeedBorder:
+                d['min speed'] = 0
+            else:
+                d['min speed'] = 1
+
+            # feature 6 and 7: bounding box area and ratio
+            area, ratio = s.box()
+            global boxAreaBorder
+            if area < boxAreaBorder:
+                d['box area'] = 0
+            else:
+                d['box area'] = 1
+            global boxRatioBorder
+            if ratio < boxRatioBorder:
+                d['box ratio'] = 0
+            else:
+                d['box ratio'] = 1
 
             ret.append(d)  # append the feature dictionary to the list
             
@@ -634,6 +674,84 @@ class Stroke:
         return ret / len(self.points)
 
     # You can (and should) define more features here
+    def avgSpeed(self, length):
+        """
+        :param length: length of the stroke; don't use length() within to save calculation
+        :return: average speed of the stroke
+        """
+        time = self.points[-1][2] - self.points[0][2]
+        if time == 0:
+            return 0
+        return float(length)/time
+
+    def minSpeed(self):
+        """
+        :return: the slowest speed between any consecutive points
+        """
+        ret = INFINITY
+        prev = self.points[0]
+        for p in self.points[1:]:
+            # use Euclidean distance
+            xdiff = p[0] - prev[0]
+            ydiff = p[1] - prev[1]
+            deltaDistance = math.sqrt(xdiff**2 + ydiff**2)
+            deltaTime = p[2] - prev[2]
+            if deltaTime != 0:
+                speed = float(deltaDistance)/deltaTime
+            else:
+                continue
+            if speed < ret:
+                ret = speed
+            prev = p
+        return ret
+
+    def maxSpeed(self):
+        """
+        :return: the fastest speed between any consecutive points
+        """
+        ret = 0
+        prev = self.points[0]
+        for p in self.points[1:]:
+            # use Euclidean distance
+            xdiff = p[0] - prev[0]
+            ydiff = p[1] - prev[1]
+            deltaDistance = math.sqrt(xdiff**2 + ydiff**2)
+            deltaTime = p[2] - prev[2]
+            if deltaTime != 0:
+                speed = float(deltaDistance)/deltaTime
+            else:
+                speed = 0
+            if speed > ret:
+                ret = speed
+            prev = p
+        return ret
+
+    def box(self):
+        """
+        :return: Bounding box area and height/length ratio
+        """
+        left = INFINITY
+        right = 0
+        up = 0
+        down = INFINITY
+        for p in self.points:
+            if p[0] < left:
+                left = p[0]
+            if p[0] > right:
+                right = p[0]
+            if p[1] < down:
+                down = p[1]
+            if p[1] > up:
+                up = p[1]
+        length = right - left
+        height = up - down
+        area = length * height
+        if length != 0:
+            ratio = float(height)/length
+        else:
+            ratio = INFINITY
+        return area, ratio
+
 
 # Products of a list
 def prod(iterable):
@@ -721,35 +839,67 @@ class Picklefy:
 #     print "text precision: " + str(textPrecision*100) + "%"
 #     print "drawing precision: " + str(drawingPrecision*100) + "%\n"
 
-# try to find the optimum border value for curvature
-for i in range(0, 51, 1):
-    global curvBorder
-    curvBorder = float(i)/5000
-    print "curvature border = " + str(float(i)/5000) + ":"
-    x = StrokeLabeler()
-    x.trainHMMDir("../trainingFiles/")
-    pkl=Picklefy()
-    pkl.save(x.hmm, 'hmm.pickle')
-    totalDict = {'text': {'text': 0, 'drawing': 0}, 'drawing': {'text': 0, 'drawing': 0}}
-    trainingFileNameList = []
-    for root, dirs, files in os.walk("../trainingFiles"):
-        for fileName in files:
-            if fileName[-3: len(fileName)] == 'xml':
-                trainingFileNameList.append("../trainingFiles/" + fileName)
-    # print trainingFileNameList
-    for fileName in trainingFileNameList:
-        strokes, trueLabels = x.loadLabeledFile(fileName)
-        labels = x.labelStrokes(strokes)
-        # print "Now labeling: " + fileName
-        individualDict = x.confusion(trueLabels, labels)
-        totalDict['text']['text'] += individualDict['text']['text']
-        totalDict['text']['drawing'] += individualDict['text']['drawing']
-        totalDict['drawing']['text'] += individualDict['drawing']['text']
-        totalDict['drawing']['drawing'] += individualDict['drawing']['drawing']
-    print totalDict
-    textPrecision = float(totalDict['text']['text'])/(totalDict['text']['text']+totalDict['text']['drawing'])
-    drawingPrecision = float(totalDict['drawing']['drawing'])/(totalDict['drawing']['drawing']+totalDict['drawing']['text'])
-    print "text precision: " + str(textPrecision*100) + "%"
-    print "drawing precision: " + str(drawingPrecision*100) + "%\n"
+# # try to find the optimum border value for curvature
+# for i in range(0, 11, 1):
+#     global curvBorder
+#     curvBorder = float(i)/500000
+#     print "curvature border = " + str(float(i)/500000) + ":"
+#     x = StrokeLabeler()
+#     x.trainHMMDir("../trainingFiles/")
+#     pkl=Picklefy()
+#     pkl.save(x.hmm, 'hmm.pickle')
+#     totalDict = {'text': {'text': 0, 'drawing': 0}, 'drawing': {'text': 0, 'drawing': 0}}
+#     trainingFileNameList = []
+#     for root, dirs, files in os.walk("../trainingFiles"):
+#         for fileName in files:
+#             if fileName[-3: len(fileName)] == 'xml':
+#                 trainingFileNameList.append("../trainingFiles/" + fileName)
+#     # print trainingFileNameList
+#     for fileName in trainingFileNameList:
+#         strokes, trueLabels = x.loadLabeledFile(fileName)
+#         labels = x.labelStrokes(strokes)
+#         # print "Now labeling: " + fileName
+#         individualDict = x.confusion(trueLabels, labels)
+#         totalDict['text']['text'] += individualDict['text']['text']
+#         totalDict['text']['drawing'] += individualDict['text']['drawing']
+#         totalDict['drawing']['text'] += individualDict['drawing']['text']
+#         totalDict['drawing']['drawing'] += individualDict['drawing']['drawing']
+#     print totalDict
+#     textPrecision = float(totalDict['text']['text'])/(totalDict['text']['text']+totalDict['text']['drawing'])
+#     drawingPrecision = float(totalDict['drawing']['drawing'])/(totalDict['drawing']['drawing']+totalDict['drawing']['text'])
+#     print "text precision: " + str(textPrecision*100) + "%"
+#     print "drawing precision: " + str(drawingPrecision*100) + "%\n"
+
+# # try to find the optimum border value for average speed
+# for i in range(0, 21, 1):
+#     global boxRatioBorder
+#     boxRatioBorder = float(i)/10
+#     print "box ratio border = " + str(float(i)/10) + ":"
+#     x = StrokeLabeler()
+#     x.trainHMMDir("../trainingFiles/")
+#     pkl=Picklefy()
+#     pkl.save(x.hmm, 'hmm.pickle')
+#     totalDict = {'text': {'text': 0, 'drawing': 0}, 'drawing': {'text': 0, 'drawing': 0}}
+#     trainingFileNameList = []
+#     for root, dirs, files in os.walk("../trainingFiles"):
+#         for fileName in files:
+#             if fileName[-3: len(fileName)] == 'xml':
+#                 trainingFileNameList.append("../trainingFiles/" + fileName)
+#     # print trainingFileNameList
+#     for fileName in trainingFileNameList:
+#         strokes, trueLabels = x.loadLabeledFile(fileName)
+#         labels = x.labelStrokes(strokes)
+#         # print "Now labeling: " + fileName
+#         individualDict = x.confusion(trueLabels, labels)
+#         totalDict['text']['text'] += individualDict['text']['text']
+#         totalDict['text']['drawing'] += individualDict['text']['drawing']
+#         totalDict['drawing']['text'] += individualDict['drawing']['text']
+#         totalDict['drawing']['drawing'] += individualDict['drawing']['drawing']
+#     print totalDict
+#     textPrecision = float(totalDict['text']['text'])/(totalDict['text']['text']+totalDict['text']['drawing'])
+#     drawingPrecision = float(totalDict['drawing']['drawing'])/(totalDict['drawing']['drawing']+totalDict['drawing']['text'])
+#     print "text precision: " + str(textPrecision*100) + "%"
+#     print "drawing precision: " + str(drawingPrecision*100) + "%"
+#     print "precision sum: " + str((textPrecision+drawingPrecision)*100) + "%\n"
 
 
