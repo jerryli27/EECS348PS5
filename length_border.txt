@@ -1,0 +1,174 @@
+length border = 100:
+{'text': {'text': 182, 'drawing': 559}, 'drawing': {'text': 211, 'drawing': 1063}}
+text precision: 24.5614035088%
+drawing precision: 83.4379905808%
+
+length border = 120:
+{'text': {'text': 233, 'drawing': 508}, 'drawing': {'text': 175, 'drawing': 1099}}
+text precision: 31.4439946019%
+drawing precision: 86.2637362637%
+
+length border = 140:
+{'text': {'text': 254, 'drawing': 487}, 'drawing': {'text': 177, 'drawing': 1097}}
+text precision: 34.2780026991%
+drawing precision: 86.1067503925%
+
+length border = 160:
+{'text': {'text': 315, 'drawing': 426}, 'drawing': {'text': 200, 'drawing': 1074}}
+text precision: 42.5101214575%
+drawing precision: 84.3014128728%
+
+length border = 180:
+{'text': {'text': 344, 'drawing': 397}, 'drawing': {'text': 246, 'drawing': 1028}}
+text precision: 46.4237516869%
+drawing precision: 80.6907378336%
+
+length border = 200:
+{'text': {'text': 351, 'drawing': 390}, 'drawing': {'text': 282, 'drawing': 992}}
+text precision: 47.3684210526%
+drawing precision: 77.8649921507%
+
+length border = 220:
+{'text': {'text': 370, 'drawing': 371}, 'drawing': {'text': 293, 'drawing': 981}}
+text precision: 49.9325236167%
+drawing precision: 77.0015698587%
+
+length border = 240:
+{'text': {'text': 395, 'drawing': 346}, 'drawing': {'text': 317, 'drawing': 957}}
+text precision: 53.30634278%
+drawing precision: 75.1177394035%
+
+length border = 260:
+{'text': {'text': 425, 'drawing': 316}, 'drawing': {'text': 356, 'drawing': 918}}
+text precision: 57.354925776%
+drawing precision: 72.0565149137%
+
+length border = 280:
+{'text': {'text': 425, 'drawing': 316}, 'drawing': {'text': 342, 'drawing': 932}}
+text precision: 57.354925776%
+drawing precision: 73.1554160126%
+
+length border = 300:
+{'text': {'text': 395, 'drawing': 346}, 'drawing': {'text': 349, 'drawing': 925}}
+text precision: 53.30634278%
+drawing precision: 72.6059654631%
+
+length border = 320:
+{'text': {'text': 395, 'drawing': 346}, 'drawing': {'text': 365, 'drawing': 909}}
+text precision: 53.30634278%
+drawing precision: 71.3500784929%
+
+length border = 340:
+{'text': {'text': 410, 'drawing': 331}, 'drawing': {'text': 393, 'drawing': 881}}
+text precision: 55.330634278%
+drawing precision: 69.1522762951%
+
+length border = 350:
+{'text': {'text': 424, 'drawing': 317}, 'drawing': {'text': 368, 'drawing': 906}}
+text precision: 57.2199730094%
+drawing precision: 71.114599686%
+
+length border = 352:
+{'text': {'text': 426, 'drawing': 315}, 'drawing': {'text': 377, 'drawing': 897}}
+text precision: 57.4898785425%
+drawing precision: 70.4081632653%
+
+length border = 354:
+{'text': {'text': 426, 'drawing': 315}, 'drawing': {'text': 377, 'drawing': 897}}
+text precision: 57.4898785425%
+drawing precision: 70.4081632653%
+
+length border = 356:
+{'text': {'text': 426, 'drawing': 315}, 'drawing': {'text': 377, 'drawing': 897}}
+text precision: 57.4898785425%
+drawing precision: 70.4081632653%
+
+length border = 358:
+{'text': {'text': 444, 'drawing': 297}, 'drawing': {'text': 377, 'drawing': 897}}
+text precision: 59.9190283401%
+drawing precision: 70.4081632653%
+
+length border = 360:
+{'text': {'text': 455, 'drawing': 286}, 'drawing': {'text': 379, 'drawing': 895}}
+text precision: 61.4035087719%
+drawing precision: 70.251177394%
+
+length border = 362:
+{'text': {'text': 461, 'drawing': 280}, 'drawing': {'text': 383, 'drawing': 891}}
+text precision: 62.2132253711%
+drawing precision: 69.9372056515%
+
+length border = 364:
+{'text': {'text': 461, 'drawing': 280}, 'drawing': {'text': 387, 'drawing': 887}}
+text precision: 62.2132253711%
+drawing precision: 69.6232339089%
+
+length border = 366:
+{'text': {'text': 461, 'drawing': 280}, 'drawing': {'text': 388, 'drawing': 886}}
+text precision: 62.2132253711%
+drawing precision: 69.5447409733%
+
+length border = 368:
+{'text': {'text': 470, 'drawing': 271}, 'drawing': {'text': 390, 'drawing': 884}}
+text precision: 63.4278002699%
+drawing precision: 69.387755102%
+
+length border = 370:
+{'text': {'text': 452, 'drawing': 289}, 'drawing': {'text': 386, 'drawing': 888}}
+text precision: 60.9986504723%
+drawing precision: 69.7017268446%
+
+length border = 380:
+{'text': {'text': 436, 'drawing': 305}, 'drawing': {'text': 390, 'drawing': 884}}
+text precision: 58.8394062078%
+drawing precision: 69.387755102%
+
+length border = 400:
+{'text': {'text': 442, 'drawing': 299}, 'drawing': {'text': 374, 'drawing': 900}}
+text precision: 59.649122807%
+drawing precision: 70.6436420722%
+
+length border = 420:
+{'text': {'text': 444, 'drawing': 297}, 'drawing': {'text': 380, 'drawing': 894}}
+text precision: 59.9190283401%
+drawing precision: 70.1726844584%
+
+length border = 440:
+{'text': {'text': 454, 'drawing': 287}, 'drawing': {'text': 399, 'drawing': 875}}
+text precision: 61.2685560054%
+drawing precision: 68.6813186813%
+
+length border = 460:
+{'text': {'text': 460, 'drawing': 281}, 'drawing': {'text': 388, 'drawing': 886}}
+text precision: 62.0782726046%
+drawing precision: 69.5447409733%
+
+length border = 480:
+{'text': {'text': 447, 'drawing': 294}, 'drawing': {'text': 379, 'drawing': 895}}
+text precision: 60.3238866397%
+drawing precision: 70.251177394%
+
+length border = 500:
+{'text': {'text': 443, 'drawing': 298}, 'drawing': {'text': 390, 'drawing': 884}}
+text precision: 59.7840755735%
+drawing precision: 69.387755102%
+
+length border = 520:
+{'text': {'text': 459, 'drawing': 282}, 'drawing': {'text': 403, 'drawing': 871}}
+text precision: 61.9433198381%
+drawing precision: 68.3673469388%
+
+length border = 540:
+{'text': {'text': 424, 'drawing': 317}, 'drawing': {'text': 371, 'drawing': 903}}
+text precision: 57.2199730094%
+drawing precision: 70.8791208791%
+
+length border = 560:
+{'text': {'text': 428, 'drawing': 313}, 'drawing': {'text': 375, 'drawing': 899}}
+text precision: 57.7597840756%
+drawing precision: 70.5651491366%
+
+length border = 580:
+{'text': {'text': 405, 'drawing': 336}, 'drawing': {'text': 352, 'drawing': 922}}
+text precision: 54.6558704453%
+drawing precision: 72.3704866562%
