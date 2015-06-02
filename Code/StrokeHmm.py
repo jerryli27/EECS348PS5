@@ -601,6 +601,7 @@ class Stroke:
             lenb = math.sqrt(bx**2 + by**2)
 
             dotab = ax*bx + ay*by
+            ### This line have dividing by 0 problem!!!
             arg = float(dotab)/float(lena*lenb)
 
             # Fix floating point precision errors
@@ -651,10 +652,9 @@ x = StrokeLabeler()
 
 #x.labelFile("../trainingFiles/0128_1.6.1.labeled.xml", "results.txt")
 
-strokes = x.loadStrokeFile("../trainingFiles/0128_1.6.1.labeled.xml")
-labels =x.labelStrokes( strokes )
-trueLabels=x.loadLabeledFile("../trainingFiles/0128_1.6.1.labeled.xml")
-print x.confusion(trueLabels[1],labels)
+strokes,trueLabels=x.loadLabeledFile("../trainingFiles/0268_1.4.1.labeled.xml")
+labels =x.labelStrokes(strokes)
+print x.confusion(trueLabels,labels)
 
 # Changelog: 2015/05/29 Jerry
 # Functions I've written: HMM.label( self, data ), StrokeLabeler.confusion(self,trueLabels, classifications)
