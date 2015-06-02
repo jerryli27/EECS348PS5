@@ -715,7 +715,7 @@ class Picklefy:
 #     print "text precision: " + str(textPrecision*100) + "%"
 #     print "drawing precision: " + str(drawingPrecision*100) + "%\n"
 
-# try to find the optimum value for length
+# try to find the optimum border value for curvature
 for i in range(0, 51, 1):
     global curvBorder
     curvBorder = float(i)/5000
