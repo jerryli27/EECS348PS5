@@ -325,6 +325,8 @@ class StrokeLabeler:
             allLabels.append(labels)
         allObservations = [self.featurefy(s) for s in allStrokes]
         self.hmm.train(allObservations, allLabels)
+        pickle=Picklefy()
+        pickle.save(self.hmm,'hmm.pickle')
 
     def trainHMMDir( self, trainingDir ):
         ''' train the HMM on all the files in a training directory '''
@@ -775,24 +777,9 @@ class Picklefy:
         f.close()
         return dObj
 
-
-# x = StrokeLabeler()
-# x.trainHMMDir("../trainingFiles/") #../ means go back a directory
-# pkl=Picklefy()
-# pkl.save(x.hmm,'hmm.pickle')
-#
-# #x.labelFile("../trainingFiles/0128_1.6.1.labeled.xml", "results.txt")
-#
-# strokes,trueLabels=x.loadLabeledFile("../trainingFiles/0128_1.6.1.labeled.xml")
-# labels =x.labelStrokes(strokes)
-# print x.confusion(trueLabels,labels)
-
-# Changelog: 2015/05/29 Jerry
-# Functions I've written: HMM.label( self, data ), StrokeLabeler.confusion(self,trueLabels, classifications)
-# 2015-05-31 Alan: Add sumOfCurvature feature in StrokeLabeler.featurefy( self, strokes )
-# 2015-06-02 Jerry: added support for multiple observed feature in label function.
-
-# Part 1 Viterbi Testing Example
+###
+### Part 1 Viterbi Testing Example
+###
 # Same as viterbi_calc_in_class on piazza
 # hmm=HMM(['sunny','cloudy','rainy'],['weather'],{'weather':1},{'weather':3})
 # hmm.priors = {'sunny':0.63,'cloudy':0.17,'rainy':0.20}
@@ -807,69 +794,10 @@ class Picklefy:
 # print hmm.label(data,'weather' )
 
 
-# # evaluate every training file and output a "total" confusion dictionary for tuning featurefy()
-# # try to find the optimum border for length
-# for i in range(450, 472, 2):
-#     global lengthBorder
-#     lengthBorder = i
-#     print "length border = " + str(i) + ":"
-#     x = StrokeLabeler()
-#     x.trainHMMDir("../trainingFiles/")
-#     pkl=Picklefy()
-#     pkl.save(x.hmm,'hmm.pickle')
-#     totalDict = {'text': {'text': 0, 'drawing': 0}, 'drawing': {'text': 0, 'drawing': 0}}
-#     trainingFileNameList = []
-#     for root, dirs, files in os.walk("../trainingFiles"):
-#         for fileName in files:
-#             if fileName[-3: len(fileName)] == 'xml':
-#                 trainingFileNameList.append("../trainingFiles/" + fileName)
-#     # print trainingFileNameList
-#     for fileName in trainingFileNameList:
-#         strokes, trueLabels = x.loadLabeledFile(fileName)
-#         labels = x.labelStrokes(strokes)
-#         # print "Now labeling: " + fileName
-#         individualDict = x.confusion(trueLabels, labels)
-#         totalDict['text']['text'] += individualDict['text']['text']
-#         totalDict['text']['drawing'] += individualDict['text']['drawing']
-#         totalDict['drawing']['text'] += individualDict['drawing']['text']
-#         totalDict['drawing']['drawing'] += individualDict['drawing']['drawing']
-#     print totalDict
-#     textPrecision = float(totalDict['text']['text'])/(totalDict['text']['text']+totalDict['text']['drawing'])
-#     drawingPrecision = float(totalDict['drawing']['drawing'])/(totalDict['drawing']['drawing']+totalDict['drawing']['text'])
-#     print "text precision: " + str(textPrecision*100) + "%"
-#     print "drawing precision: " + str(drawingPrecision*100) + "%\n"
-
-# # try to find the optimum border value for curvature
-# for i in range(0, 11, 1):
-#     global curvBorder
-#     curvBorder = float(i)/500000
-#     print "curvature border = " + str(float(i)/500000) + ":"
-#     x = StrokeLabeler()
-#     x.trainHMMDir("../trainingFiles/")
-#     pkl=Picklefy()
-#     pkl.save(x.hmm, 'hmm.pickle')
-#     totalDict = {'text': {'text': 0, 'drawing': 0}, 'drawing': {'text': 0, 'drawing': 0}}
-#     trainingFileNameList = []
-#     for root, dirs, files in os.walk("../trainingFiles"):
-#         for fileName in files:
-#             if fileName[-3: len(fileName)] == 'xml':
-#                 trainingFileNameList.append("../trainingFiles/" + fileName)
-#     # print trainingFileNameList
-#     for fileName in trainingFileNameList:
-#         strokes, trueLabels = x.loadLabeledFile(fileName)
-#         labels = x.labelStrokes(strokes)
-#         # print "Now labeling: " + fileName
-#         individualDict = x.confusion(trueLabels, labels)
-#         totalDict['text']['text'] += individualDict['text']['text']
-#         totalDict['text']['drawing'] += individualDict['text']['drawing']
-#         totalDict['drawing']['text'] += individualDict['drawing']['text']
-#         totalDict['drawing']['drawing'] += individualDict['drawing']['drawing']
-#     print totalDict
-#     textPrecision = float(totalDict['text']['text'])/(totalDict['text']['text']+totalDict['text']['drawing'])
-#     drawingPrecision = float(totalDict['drawing']['drawing'])/(totalDict['drawing']['drawing']+totalDict['drawing']['text'])
-#     print "text precision: " + str(textPrecision*100) + "%"
-#     print "drawing precision: " + str(drawingPrecision*100) + "%\n"
-
+###
+### Training for optimum values for featurefy
+###
+"""
 # # try to find the optimum border value for average speed
 # for i in range(0, 21, 1):
 #     global boxRatioBorder
@@ -902,4 +830,4 @@ class Picklefy:
 #     print "drawing precision: " + str(drawingPrecision*100) + "%"
 #     print "precision sum: " + str((textPrecision+drawingPrecision)*100) + "%\n"
 
-
+"""
